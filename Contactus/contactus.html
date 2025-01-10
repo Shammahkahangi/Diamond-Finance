@@ -15,7 +15,7 @@
   -->
   <title>Diamond Credit</title>
   <meta name="title" content="Diamond Credit">
-  <meta name="description" content="This is a business agency html template made by codewithsadee">
+  <meta name="description" content="This is a business agency html template made by Visionate Digital">
 
   <!-- 
     - favicon
@@ -35,7 +35,22 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "K0ZnJbwDq0Xma1AN3",
+      });
+   })();
+</script>
+<script src="/assets/js/script.js"></script>
+
+
 </head>
+
+
 <body>
     <section class="contact" style="background-image: url('/Adex/assets/images/hero-bg.jpg');">
         <div class="content">
@@ -64,32 +79,31 @@
                             <div class="icon"><i class="fa-regular fa-envelope"></i></div>
                                 <div class="text">
                                     <h3> Email</h3>
-                                    <p> Diamond credit @ gmail.com</p>
+                                    <p> Diamond credit@gmail.com</p>
                                 </div>
                             </div>
             </div>
 
             <div class="contactForm">
-                <form action="mail.php" method="POST">
-                    <h2>Send Message</h2>
-                    <div class="inputBox">
-                        <input type="text" name="name" required="required">
-                        <span>Full name</span>
-                    </div>
-                    <div class="inputBox">
-                        <input type="email" name="email" required="required">
-                        <span>Email</span>
-                    </div>
-                    <div class="inputBox">
-                        <!-- <input type="text" name="textarea" required> -->
-                        <textarea  required="required"></textarea>
-                        <span>Type your Message...</span>
-                    </div>
-                    <div class="inputBox">
-                        <input type="submit" name="" value="Send">
-                    </div>
-                </form>
-            </div>
+    <form onsubmit="sendMail(); return false;">
+        <h2>Send Message</h2>
+        <div class="inputBox">
+            <input type="text" id="name" name="name" required="required">
+            <span>Full name</span>
+        </div>
+        <div class="inputBox">
+            <input type="email" id="email" name="email" required="required">
+            <span>Email</span>
+        </div>
+        <div class="inputBox">
+            <textarea id="message" name="message" required="required"></textarea>
+            <span>Type your Message...</span>
+        </div>
+        <div class="inputBox">
+            <input type="submit" value="Send">
+        </div>
+    </form>
+</div>
         </div>
     </section>
 

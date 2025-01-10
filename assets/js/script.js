@@ -155,4 +155,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       }
     });
   });
-  
+  // Email.JS
+  function sendMail() {
+    // Gather form data
+    let parms = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+    };
+
+    // Send email using EmailJS
+    emailjs.send("service_96ehtsw", "template_tda117n", parms)
+        .then(function(response) {
+            alert("Email Sent Successfully!");
+            console.log("Success:", response.status, response.text);
+        }, function(error) {
+            alert("Failed to send email. Please try again.");
+            console.log("Error:", error);
+        });
+}

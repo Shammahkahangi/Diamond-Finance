@@ -33,7 +33,7 @@
 }
 .contact .content p{
     font-weight: 300;
-    color: #fff;
+    color: #121212;
 }
 
 .container
@@ -74,7 +74,7 @@
     flex-direction: column;
     font-weight: 300;
 }
-.container .contactInfo .box .text h3{
+.container .contactInfo .box .text h3, .container .contactInfo .box .text p{
     font-weight: 500;
     color: #00bcd4;
 }
