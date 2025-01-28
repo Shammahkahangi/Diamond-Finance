@@ -18,17 +18,31 @@ const addEventOnElements = function (elements, eventType, callback) {
  * NAVBAR TOGGLE FOR MOBILE
  */
 
-const navbar = document.querySelector("[data-navbar]");
-const navTogglers = document.querySelectorAll("[data-nav-toggler]");
-const overlay = document.querySelector("[data-overlay]");
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.querySelector('.navbar');
+  const navOpenBtn = document.querySelector('.nav-open-btn');
+  const navCloseBtn = document.querySelector('.nav-close-btn');
+  const overlay = document.querySelector('.overlay');
 
-const toggleNavbar = function () {
-  navbar.classList.toggle("active");
-  overlay.classList.toggle("active");
-  document.body.classList.toggle("nav-active");
-}
+  function toggleNav() {
+      navbar.classList.toggle('active');
+      overlay.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+  }
 
-addEventOnElements(navTogglers, "click", toggleNavbar);
+  navOpenBtn.addEventListener('click', toggleNav);
+  navCloseBtn.addEventListener('click', toggleNav);
+  overlay.addEventListener('click', toggleNav);
+
+  // Close menu on resize if desktop
+  window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+          navbar.classList.remove('active');
+          overlay.classList.remove('active');
+          document.body.classList.remove('no-scroll');
+      }
+  });
+});
 
 
 
@@ -157,20 +171,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
   // Email.JS
   function sendMail() {
-    // Gather form data
+    // Gather all form data
     let parms = {
-        name: document.getElementById("name").value,
+        firstName: document.getElementById("firstName").value,
+        lastName: document.getElementById("lastName").value,
         email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        employment: document.querySelector('input[name="employment"]:checked').value,
+        loanAmount: document.getElementById("loanAmount").value,
+        product: document.getElementById("product").value,
+        sources: Array.from(document.querySelectorAll('input[name="source[]"]:checked')).map(cb => cb.value).join(', '),
         message: document.getElementById("message").value
     };
 
     // Send email using EmailJS
-    emailjs.send("service_96ehtsw", "template_tda117n", parms)
+    emailjs.send("service_f59lsqu", "template_tda117n", parms)
         .then(function(response) {
-            alert("Email Sent Successfully!");
+            alert("Application Submitted Successfully!");
             console.log("Success:", response.status, response.text);
+            document.querySelector("form").reset(); // Optional: Reset form after success
         }, function(error) {
-            alert("Failed to send email. Please try again.");
+            alert("Failed to submit application. Please try again.");
             console.log("Error:", error);
         });
 }

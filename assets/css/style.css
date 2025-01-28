@@ -694,6 +694,7 @@ body.nav-active { overflow: hidden; }
   background-color: var(--violet-blue-crayola);
   color: var(--white);
   border: none;
+  margin-top: 10px;
 }
 
 

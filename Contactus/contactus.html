@@ -32,8 +32,9 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/Contactus/contactus.css">
 
   <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -46,12 +47,103 @@
    })();
 </script>
 <script src="/assets/js/script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 
 </head>
 
 
+
+
 <body>
+
+    <header class="header" data-header>
+        <div class="container">
+    
+          <a href="#" class="logo">
+            <img src="/assets/images/LOGO. GOLD (1).png" width="200" height="200" alt="Diamond home" class="logo-light">
+    
+            <img src="/assets/images/LOGO. GOLD (1).png" width="200" height="200" alt="Diamond home" class="logo-dark">
+          </a>
+    
+          <nav class="navbar" data-navbar>
+            <div class="navbar-top">
+              <a href="#" class="logo">
+                <img src="/assets/images/LOGO. GOLD (1).png" alt="Logo" width="200" height="200">
+              </a>
+              <button class="nav-close-btn" aria-label="close menu">
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+          
+            <ul class="navbar-list">
+
+                <li>
+                  <a href="#" class="navbar-link">Home</a>
+                </li>
+      
+                <li>
+                  <a   href="/About-us/index.html" class="navbar-link">About us</a>
+                </li>
+      
+                <li>
+                  <a href="/Products/products.html" class="navbar-link" >Products</a>
+                </li>
+      
+                <li>
+                  <a href="https://drive.google.com/file/d/15GnVOMXRMhlrCscmK4RM4UddYtFrjJt8/view?usp=share_link" class="navbar-link">Download form</a>
+                </li>
+      
+                <li>
+                  <a href="/Contactus/contactus.html" class="navbar-link">Contact us</a>
+                </li>
+      
+              </ul>
+          
+            <!-- Contact Info -->
+            <div class="wrapper">
+              <a href="mailto:diamondcredit.ug@gmail.com" class="contact-link">
+                <ion-icon name="mail-outline"></ion-icon>
+                diamondcredit.ug@gmail.com
+              </a>
+              <a href="tel:+256783880007" class="contact-link">
+                <ion-icon name="call-outline"></ion-icon>
+                +256 783880007
+              </a>
+            </div>
+          
+            <!-- Social Links -->
+            <ul class="social-list">
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </nav>
+    
+          <!-- <a href="#" class="btn btn-primary">Free Trial</a> -->
+    
+          <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+            <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+          </button>
+    
+          <div class="overlay" data-nav-toggler data-overlay></div>
+    
+        </div>
+      </header>
+    
     <section class="contact" style="background-image: url('/Adex/assets/images/hero-bg.jpg');">
         <div class="content">
             <h4>
@@ -85,30 +177,219 @@
             </div>
 
             <div class="contactForm">
-    <form onsubmit="sendMail(); return false;">
-        <h2>Send Message</h2>
-        <div class="inputBox">
-            <input type="text" id="name" name="name" required="required">
-            <span>Full name</span>
-        </div>
-        <div class="inputBox">
-            <input type="email" id="email" name="email" required="required">
-            <span>Email</span>
-        </div>
-        <div class="inputBox">
-            <textarea id="message" name="message" required="required"></textarea>
-            <span>Type your Message...</span>
-        </div>
-        <div class="inputBox">
-            <input type="submit" value="Send">
-        </div>
-    </form>
-</div>
+                <form onsubmit="sendMail(); return false;">
+                    <h2>Apply for Financing</h2>
+                    <p>Fill in your information below to apply and book a meeting with our experts</p>
+            
+                    <!-- Name Section -->
+                    <div class="nameGroup">
+                        <div class="inputBox half">
+                            <input type="text" id="firstName" name="firstName" required>
+                            <span>First Name *</span>
+                        </div>
+                        <div class="inputBox half">
+                            <input type="text" id="lastName" name="lastName" required>
+                            <span>Last Name *</span>
+                        </div>
+                    </div>
+            
+                    <!-- Contact Info -->
+                    <div class="inputBox">
+                        <input type="email" id="email" name="email" required>
+                        <span>Your Email *</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="tel" id="phone" name="phone" required>
+                        <span>Phone Number *</span>
+                    </div>
+            
+                    <!-- Employment Status -->
+                    <div class="inputBox radioGroup">
+                        <label>Are you Employed or do you own a Business? *</label>
+                        <div class="radioOptions">
+                            <label>
+                                <input type="radio" name="employment" value="employed" required>
+                                Yes, I am Employed
+                            </label>
+                            <label>
+                                <input type="radio" name="employment" value="businessOwner">
+                                Yes, I own a Business
+                            </label>
+                            <label>
+                                <input type="radio" name="employment" value="unemployed">
+                                No, I am Unemployed and do not own a Business
+                            </label>
+                        </div>
+                    </div>
+            
+                    <!-- Loan Amount -->
+                    <div class="inputBox">
+                        <select id="loanAmount" name="loanAmount" required>
+                            <option value="" disabled selected>How much would you like to borrow? *</option>
+                            <option value="50k-1M">50,000 - 1,000,000 UGX</option>
+                            <option value="2M-50M">2,000,000 - 50,000,000 UGX</option>
+                            <option value="50M-150M">50,000,000 - 150,000,000 UGX</option>
+                            <option value="150M-300M">150,000,000 - 300,000,000 UGX</option>
+                        </select>
+                    </div>
+            
+                    <!-- Products -->
+                    <div class="inputBox">
+                        <select id="product" name="product" required>
+                            <option value="" disabled selected>Select Product *</option>
+                            <option value="personal">Personal Loan</option>
+                            <option value="business">Business Loan</option>
+                            <option value="balloon">Balloon Loan</option>
+                            <option value="goldmine">Goldmine Mobile Loan</option>
+                        </select>
+                    </div>
+            
+                    <!-- How Heard About -->
+                    <div class="inputBox checkboxGroup">
+                        <label>How did you hear about us?</label>
+                        <div class="checkboxOptions">
+                            <label>
+                                <input type="checkbox" name="source[]" value="facebook">
+                                Facebook
+                            </label>
+                            <label>
+                                <input type="checkbox" name="source[]" value="instagram">
+                                Instagram
+                            </label>
+                            <label>
+                                <input type="checkbox" name="source[]" value="wordOfMouth">
+                                Word of Mouth
+                            </label>
+                            <label>
+                                <input type="checkbox" name="source[]" value="google">
+                                Google/Search Engine
+                            </label>
+                            <label>
+                                <input type="checkbox" name="source[]" value="review">
+                                Third Party Review
+                            </label>
+                        </div>
+                    </div>
+            
+                    <!-- Message -->
+                    <div class="inputBox">
+                        <textarea id="message" name="message" required></textarea>
+                        <span>Your Message *</span>
+                    </div>
+            
+                    <div class="inputBox">
+                        <input type="submit" value="Submit Application">
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 <div class="elfsight-app-1af6d5e8-f935-47d6-a347-4427d2c6f712"></div>
+
+<footer class="footer">
+    <div class="container grid-list">
+
+      <div class="footer-brand">
+
+        <a href="#" class="logo">
+          <img src="/assets/images/LOGO. GOLD (1).png" width="200" height="200" alt="Adex home">
+        </a>
+
+        <p class="footer-text">
+           <br> All rights reserved.
+        </p>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://twitter.com/home" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+          
+
+          <li>
+            <a href="https://www.instagram.com/diamond_credit_fs/" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="h4 footer-list-title">Get in Touch</p>
+        </li>
+
+        <li>
+          <address class="footer-text">
+            Kamuli Road, Kireka
+          </address>
+        </li>
+
+        <li>
+          <a href="" class="footer-link">info.diamondcreditmain@gmail.com</a>
+        </li>
+
+        <li>
+          <a href="tel:001234567890" class="footer-link">+256 783-880007 </a>
+        </li>
+
+      </ul>
+
+      <ul class="footer-list">
+
+        <li>
+          <p class="h4 footer-list-title">Learn More</p>
+        </li>
+
+        <li>
+          <a href="/About-us/index.html" class="footer-link">About Us</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Our Story</a>
+        </li>
+
+        <li>
+          <a href="/Products/products.html" class="footer-link">Products</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Terms of Use</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Privacy Policy</a>
+        </li>
+
+      </ul>
+
+      <div class="footer-list">
+
+       
+
+      </div>
+
+    </div>
+  </footer>
 </body>
 
 
