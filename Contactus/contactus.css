@@ -456,4 +456,44 @@ input[type="checkbox"] {
     .inputBox input[type="submit"] {
         width: 100%;
     }
+    .radioGroup,
+  .checkboxGroup {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .radioOptions,
+  .checkboxOptions {
+    gap: 8px;
+    padding: 8px 0;
+  }
+
+  .radioOptions label,
+  .checkboxOptions label {
+    font-size: 12px;
+    align-items: flex-start;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    min-width: 16px;
+    margin-top: 2px;
+  }
+
+  /* Form Container Padding */
+  .contactForm {
+    padding: 25px 15px;
+  }
+
+  /* Input Groups */
+  .nameGroup {
+    flex-direction: column;
+  }
+
+  .inputBox.half {
+    width: 100%;
+  }
+
 }
