@@ -451,11 +451,12 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero.has-bg-image {
-        padding: 120px 0 80px;
+        padding: 160px 0 100px;
     }
 
     .hero-title {
-        font-size: 36px;
+        font-size: 40px;
+        margin-bottom: 25px;
     }
 
     .hero-text {
@@ -486,6 +487,17 @@
 
     .step-indicator {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero.has-bg-image {
+        padding: 140px 0 80px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+        margin-bottom: 20px;
     }
 }
 
@@ -549,7 +561,7 @@
 /* Hero Section */
 .hero.has-bg-image {
     position: relative;
-    padding: 160px 0 120px;
+    padding: 200px 0 140px;
     text-align: center;
     color: var(--white);
     background-position: center;
@@ -561,11 +573,12 @@
     z-index: 1;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .hero-title {
-    margin-bottom: 25px;
-    font-size: 48px;
+    margin-bottom: 30px;
+    font-size: 52px;
     font-weight: 700;
     line-height: 1.2;
 }
