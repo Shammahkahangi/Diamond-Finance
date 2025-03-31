@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for a Loan - Diamond Finance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="apply.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="/Adex/assets/images/logo.png" alt="Diamond Finance Logo" class="logo-dark">
+            </a>
+            <nav class="navbar">
+                <button class="nav-close-btn" aria-label="Close menu">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+                <ul class="navbar-list">
+                    <li><a href="/" class="navbar-link">Home</a></li>
+                    <li><a href="/About-us/index.html" class="navbar-link">About Us</a></li>
+                    <li><a href="/Products/products.html" class="navbar-link">Products</a></li>
+                    <li><a href="/Contactus/contactus.html" class="navbar-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="nav-open-btn" aria-label="Open menu">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="apply-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                    <div class="step active">1</div>
+                    <div class="step">2</div>
+                    <div class="step">3</div>
+                    <div class="step">4</div>
+                    <div class="step">5</div>
+                </div>
+
+                <form id="loanForm" class="multi-step-form">
+                    <!-- Step 1: Personal Details -->
+                    <div class="form-step active" data-step="1">
+                        <h2>Personal Details</h2>
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="idNumber">National ID/Passport Number</label>
+                            <input type="text" id="idNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Physical Address</label>
+                            <textarea id="address" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Loan Details -->
+                    <div class="form-step" data-step="2">
+                        <h2>Loan Details</h2>
+                        <div class="form-group">
+                            <label for="loanAmount">Loan Amount (UGX)</label>
+                            <input type="number" id="loanAmount" min="100000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loanPurpose">Loan Purpose</label>
+                            <select id="loanPurpose" required>
+                                <option value="">Select Purpose</option>
+                                <option value="business">Business Expansion</option>
+                                <option value="personal">Personal Use</option>
+                                <option value="education">Education</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="repaymentPeriod">Preferred Repayment Period (Months)</label>
+                            <select id="repaymentPeriod" required>
+                                <option value="">Select Period</option>
+                                <option value="12">12 Months</option>
+                                <option value="24">24 Months</option>
+                                <option value="36">36 Months</option>
+                                <option value="48">48 Months</option>
+                                <option value="60">60 Months</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="collateral">Collateral Offered</label>
+                            <textarea id="collateral" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Employment Details -->
+                    <div class="form-step" data-step="3">
+                        <h2>Employment Details</h2>
+                        <div class="form-group">
+                            <label for="employmentType">Employment Type</label>
+                            <select id="employmentType" required>
+                                <option value="">Select Type</option>
+                                <option value="salaried">Salaried</option>
+                                <option value="self-employed">Self-employed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="employerName">Employer Name</label>
+                            <input type="text" id="employerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title</label>
+                            <input type="text" id="jobTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="monthlyIncome">Monthly Income (UGX)</label>
+                            <input type="number" id="monthlyIncome" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="workAddress">Work Address</label>
+                            <textarea id="workAddress" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Next of Kin Details -->
+                    <div class="form-step" data-step="4">
+                        <h2>Next of Kin Details</h2>
+                        <div class="form-group">
+                            <label for="kinName">Full Name</label>
+                            <input type="text" id="kinName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="kinRelationship">Relationship</label>
+                            <input type="text" id="kinRelationship" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="kinPhone">Phone Number</label>
+                            <input type="tel" id="kinPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="kinAddress">Physical Address</label>
+                            <textarea id="kinAddress" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Business Details -->
+                    <div class="form-step" data-step="5">
+                        <h2>Business Details (For Self-employed Applicants)</h2>
+                        <div class="form-group">
+                            <label for="businessName">Business Name</label>
+                            <input type="text" id="businessName">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessType">Type of Business</label>
+                            <input type="text" id="businessType">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessLocation">Business Location</label>
+                            <textarea id="businessLocation"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="annualRevenue">Annual Revenue (UGX)</label>
+                            <input type="number" id="annualRevenue" min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" disabled>Previous</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <img src="/Adex/assets/images/logo.png" alt="Diamond Finance Logo">
+                    </a>
+                    <p class="footer-text">Your trusted partner in financial growth and prosperity.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/About-us/index.html">About Us</a></li>
+                        <li><a href="/Products/products.html">Products</a></li>
+                        <li><a href="/Contactus/contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +256 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@diamondfinance.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Diamond Finance. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="/Legal/terms.html">Terms of Use</a>
+                    <a href="/Legal/privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="apply.js"></script>
+</body>
+</html> 

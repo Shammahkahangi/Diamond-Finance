@@ -52,19 +52,18 @@
   .navbar {
     position: fixed;
     top: 0;
-    right: -100%; /* Changed from transform to position property */
-    width: 500px;
+    right: -100%;
+    width: 280px;
     height: 100vh;
     background-color: var(--charcoal);
-    padding: 30px 20px;
-    transition: right 0.3s ease-in-out; /* Animate right property */
+    padding: 40px 25px;
+    transition: right 0.3s ease-in-out;
     overflow-y: auto;
     z-index: 5;
   }
   
   .navbar.active {
     right: 0;
-    
   }
   
   /* Overlay */
@@ -78,15 +77,14 @@
     z-index: 4;
     display: none;
     transition: opacity 0.3s ease;
-    opacity: 0; /* Start invisible */
-    pointer-events: none; /* Disable interactions when hidden */
+    opacity: 0;
+    pointer-events: none;
   }
   
   .overlay.active {
     display: block;
-    opacity: 1; /* Fade in overlay */
-    pointer-events: auto; /* Enable interactions when visible */
-
+    opacity: 1;
+    pointer-events: auto;
   }
   
   /* Mobile Menu Toggle Buttons */
@@ -98,12 +96,14 @@
     cursor: pointer;
     color: var(--charcoal);
     display: none;
+    z-index: 10;
   }
   
   .nav-close-btn {
     position: absolute;
     top: 20px;
     right: 20px;
+    color: var(--white);
   }
   
   /* Mobile Menu List */
@@ -156,82 +156,78 @@
   /* ===== Mobile Adjustments ===== */
   @media (max-width: 768px) {
     .nav-open-btn {
-      display: block;
-      z-index: 10; 
-      padding: 40px 25px;
-      width: 180px;
-      right: -280px;
+        display: block;
+        position: relative;
+        padding: 10px;
     }
   
     .navbar {
         padding: 40px 25px;
         width: 280px;
-      }
+    }
     
-      .navbar-list {
+    .navbar-list {
         display: flex;
         flex-direction: column;
         gap: 20px;
         margin-top: 30px;
-      }
-      .navbar-link{
-        color: var(--white)
-      }
+    }
     
-      /* Contact Info Wrapper */
-      .wrapper {
+    .navbar-link {
+        color: var(--white);
+        font-size: 17px;
+        padding: 12px 0;
+    }
+    
+    .navbar-link:hover {
+        color: var(--violet-blue-crayola);
+    }
+    
+    /* Contact Info Wrapper */
+    .wrapper {
         display: flex;
         flex-direction: column;
         gap: 15px;
         margin-top: 30px;
         padding-top: 30px;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
-      }
+    }
     
-      .contact-link {
+    .contact-link {
         display: flex;
         align-items: center;
         gap: 10px;
         color: var(--white);
         font-size: 15px;
-      }
+    }
     
-      /* Social Links */
-      .social-list {
+    /* Social Links */
+    .social-list {
         display: flex;
         gap: 20px;
         margin-top: 30px;
         padding-top: 30px;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
-      }
+    }
     
-      .social-link {
+    .social-link {
         font-size: 24px;
         color: var(--white);
         transition: color 0.3s ease;
-      }
-    
-      .social-link:hover {
-        color: var(--violet-blue-crayola);
-      }
-    
-      /* Adjust navbar link sizes */
-      .navbar-link {
-        font-size: 17px;
-        padding: 12px 0;
-      }
-    
-      /* Hide desktop-only elements */
-      .header .logo-light {
-        display: none !important;
-      }
-      .header .logo-dark{
-        display: block !important;
-      }
     }
-
-  
-  
+    
+    .social-link:hover {
+        color: var(--violet-blue-crayola);
+    }
+    
+    /* Hide desktop-only elements */
+    .header .logo-light {
+        display: none !important;
+    }
+    .header .logo-dark{
+        display: block !important;
+    }
+  }
 
 .contact {
     position: relative;
@@ -373,7 +369,7 @@
 
 .radioGroup,
 .checkboxGroup {
-    margin: 20px 0;
+    margin: 25px 0;
     width: 100%;
 }
 
@@ -381,8 +377,9 @@
 .checkboxOptions {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 20px;
+    margin-top: 15px;
+    padding-left: 10px;
 }
 
 .radioOptions label,
@@ -392,16 +389,16 @@
     color: #444;
     font-size: 14px;
     cursor: pointer;
-    gap: 8px;
-    line-height: 1.4;
+    gap: 12px;
+    line-height: 1.5;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
     margin: 0;
     accent-color: #0f0c29;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     cursor: pointer;
 }
 
@@ -465,18 +462,22 @@ input[type="checkbox"] {
     .radioGroup,
     .checkboxGroup {
         width: 100%;
+        margin: 20px 0;
     }
 
     .radioOptions,
     .checkboxOptions {
-        gap: 12px;
+        gap: 15px;
+        margin-top: 12px;
+        padding-left: 8px;
     }
 
     .radioOptions label,
     .checkboxOptions label {
         font-size: 14px;
         align-items: center;
-        line-height: 1.4;
+        line-height: 1.5;
+        gap: 10px;
     }
 
     input[type="radio"],
