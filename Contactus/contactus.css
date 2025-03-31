@@ -374,13 +374,14 @@
 .radioGroup,
 .checkboxGroup {
     margin: 20px 0;
+    width: 100%;
 }
 
 .radioOptions,
 .checkboxOptions {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
     margin-top: 10px;
 }
 
@@ -391,12 +392,17 @@
     color: #444;
     font-size: 14px;
     cursor: pointer;
+    gap: 8px;
+    line-height: 1.4;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
-    margin-right: 8px;
+    margin: 0;
     accent-color: #0f0c29;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
 }
 
 .inputBox input[type="submit"] {
@@ -457,43 +463,40 @@ input[type="checkbox"] {
         width: 100%;
     }
     .radioGroup,
-  .checkboxGroup {
-    width: 100%;
-    overflow: hidden;
-  }
+    .checkboxGroup {
+        width: 100%;
+    }
 
-  .radioOptions,
-  .checkboxOptions {
-    gap: 8px;
-    padding: 8px 0;
-  }
+    .radioOptions,
+    .checkboxOptions {
+        gap: 12px;
+    }
 
-  .radioOptions label,
-  .checkboxOptions label {
-    font-size: 12px;
-    align-items: flex-start;
-    line-height: 1.4;
-    word-break: break-word;
-  }
+    .radioOptions label,
+    .checkboxOptions label {
+        font-size: 14px;
+        align-items: center;
+        line-height: 1.4;
+    }
 
-  input[type="radio"],
-  input[type="checkbox"] {
-    min-width: 16px;
-    margin-top: 2px;
-  }
+    input[type="radio"],
+    input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        margin: 0;
+    }
 
-  /* Form Container Padding */
-  .contactForm {
-    padding: 25px 15px;
-  }
+    /* Form Container Padding */
+    .contactForm {
+        padding: 25px 15px;
+    }
 
-  /* Input Groups */
-  .nameGroup {
-    flex-direction: column;
-  }
+    /* Input Groups */
+    .nameGroup {
+        flex-direction: column;
+    }
 
-  .inputBox.half {
-    width: 100%;
-  }
-
+    .inputBox.half {
+        width: 100%;
+    }
 }
